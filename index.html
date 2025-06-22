@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Add the new CSS for advanced effects -->
+    <link rel="stylesheet" href="./css/effects.css">
+    
+    <!-- Add Chart.js for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Custom cursor (optional) -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Theme toggle button -->
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="toggle-ball"></div>
+        </label>
+    </div>
+
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo">My Portfolio</h1>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Update hero section with scramble text -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1>Hi, I'm <span class="highlight scramble-text" data-phrases='["Kesavanand"]'>Kesavanand</span></h1>
+                <p class="lead">Web Developer & Designer</p>
+                <p class="description">I create beautiful, functional, and responsive websites.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+                <!-- Social icons in hero section -->
+                <div class="social-icons">
+                    <a href="https://github.com/KesavanandJS" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kesavanand-js?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kesav_anand?igsh=MW41b21hNWwxaXIxOQ==" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Add a decorative element -->
+            <div class="hero-decoration parallax-item" data-speed="0.08" data-aos="fade-left">
+                <div class="blob"></div>
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Update about section with enhanced image -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="avatar-container">
+                        <div class="profile-frame"></div>
+                        <div class="avatar-ring"></div>
+                        <img src="D:\Personal portfolio\Portfolio\Profile\myimage.png" alt="Profile Picture" class="avatar-img">
+                        <div class="profile-backdrop"></div>
+                        <div class="profile-decoration">
+                            <div class="decoration-dot dot-1"></div>
+                            <div class="decoration-dot dot-2"></div>
+                            <div class="decoration-dot dot-3"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I'm a passionate web developer with expertise in creating modern and responsive websites. I have experience working with various technologies and frameworks to deliver high-quality web solutions.</p>
+                    <p>I've been continuously learning and improving my skills to stay up-to-date with the latest technologies.</p>
+                    <div class="about-details">
+                        <div class="detail"><strong>Name:</strong> Kesavanand JS</div>
+                        <div class="detail"><strong>Email:</strong> kesavanand20@gmail.com</div>
+                        <div class="detail"><strong>Location:</strong> Tamil Nadu , India</div>
+                    </div>
+                    <a href="D:\Personal portfolio\Portfolio\Resume\Kesavanand Resume.pdf" class="btn btn-primary" download>Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update skills section with radar chart -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+          
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\Python.png" alt="Python">
+                    <h3>Python</h3>
+                    <p>Skilled in python programming for system-level applications.</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\java.png" alt="Java">
+                    <h3>Java</h3>
+                    <p>Basics in Java for software development.</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\HTML.png" alt="HTML5">
+                    <h3>HTML5</h3>
+                    <p>Proficient in HTML for creating structured web pages.</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\C.png" alt="C">
+                    <h3>C Programming</h3>
+                    <p>Skilled in C programming for system-level applications.</p>
+                </div>
+                <!-- Skill 5 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\excel.png" alt="Excel">
+                    <h3>Excel</h3>
+                    <p>Advanced Excel skills for data visualization.</p>
+                </div>
+                <!-- Skill 6 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\powerpoint.png" alt="PowerPoint">
+                    <h3>PowerPoint</h3>
+                    <p>Experienced in creating impactful presentations using PowerPoint.</p>
+                </div>
+                <!-- Skill 7 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\word.png" alt="Word">
+                    <h3>Word</h3>
+                    <p>Experienced in Word.</p>
+                </div>
+                <!-- Skill 8 -->
+                <div class="skill-card" data-aos="zoom-in">
+                    <img src="D:\Personal portfolio\Portfolio\Skills\sql.png" alt="SQL">
+                    <h3>SQL</h3>
+                    <p>Basics in SQL.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Certifications</h2>
+            <!-- Add a filter system for certificates -->
+            <div class="cert-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="microsoft">Microsoft</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+            </div>
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="web">
+                    <img src="./cirtificates/Python Cirtificate.jpg" alt="Certificate 1">
+                    <p>Completed Python programming course from at CCube Technologies.</p>
+                </div>
+                <!-- Certificate 2 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="web">
+                    <img src="./cirtificates/CodSoft Intern (1).png" alt="Certificate 2">
+                    <p>Completed 1 month Internship in CodSoft.</p>
+                </div>
+                <!-- Certificate 3 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/SIH 2024.png" alt="Certificate 3">
+                    <p>Participated in Smart Indian Hackathon 2024.</p>
+                </div>
+                <!-- Certificate 4 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="web">
+                    <img src="./cirtificates/Mango DB.jpg" alt="Certificate 4">
+                    <p>Completed MongoDB for Students in MongoDB.</p>
+                </div>
+                <!-- Certificate 5 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/Azure.png" alt="Certificate 5">
+                    <p>Completed Microsoft Azure Certification on Built a natural language processing solution with Azure Ai Language.</p>
+                </div>
+                <!-- Certificate 6 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="web">
+                    <img src="./cirtificates/NoviTech.jpg" alt="Certificate 6">
+                    <p>Completed the 30 days Master Class in Full Stack Development conducted by NoviTech R&D Private Limited.</p>
+                </div>
+                <!-- Certificate 7 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="web">
+                    <img src="./cirtificates/Implant training 1.jpg" alt="Certificate 7">
+                    <p>Completed 5 days Inplant Training at NexGen Instruments on the domine of Web Development.</p>
+                </div>
+                <!-- Certificate 8 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/infosys 8.jpg" alt="Certificate 8">
+                    <p>Completed Oracle SQL Course in Infosys Springboard.</p>
+                </div>
+                <!-- Certificate 9 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/Infosys 3.jpg" alt="Certificate 9">
+                    <p>Completed C programming course in Infosys Springboard.</p>
+                </div>
+                <!-- Certificate 10 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/Translate speech.jpg" alt="Certificate 10">
+                    <p>Earned my "Translate speech with the Azure AI Speech service" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 11 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/Create speech.jpg" alt="Certificate 11">
+                    <p>Earned my "Create speech-enabled apps with Azure AI services" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 12 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/transulate text.jpg" alt="Certificate 12">
+                    <p>Earned my "Translate text with Azure AI Translator service" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 13 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/custom named entity.jpg" alt="Certificate 13">
+                    <p>Earned my "Custom named entity recognition" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 14 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/create custom text.jpg" alt="Certificate 14">
+                    <p>Earned my "Custom text classification solution" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 15 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/Build a conversation language.jpg" alt="Certificate 15">
+                    <p>Earned my "Build a conversational language understanding model" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 16 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/create question answering solution.jpg" alt="Certificate 16">
+                    <p>Earned my "Create question answering solutions with Azure AI Language" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 17 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="microsoft">
+                    <img src="./cirtificates/analyze text .jpg" alt="Certificate 17">
+                    <p>Earned my "Analyze text with Azure AI Language" badge at Microsoft Learn</p>
+                </div>
+                <!-- Certificate 18 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/Karpagam college PP.jpg" alt="Certificate 18">
+                    <p>Presented a paper in the topic of EDGE COMPUTING at Karpagam college.</p>
+                </div>
+                <!-- Certificate 19 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/KPR Cybersecurity workshop.jpg" alt="Certificate 19">
+                    <p>Attended the national level workshop on Cyber security at KPR college.</p>
+                </div>
+                <!-- Certificate 20 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/Online Placement Training IIT Bombay.jpg" alt="Certificate 20">
+                    <p>Attended the Placement preparation program conducted by IIP in association with Abhyuday IIT Bombay.</p>
+                </div>
+                <!-- Certificate 21 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/ideathon.jpg" alt="Certificate 21">
+                    <p>Participated in department level Ideathon competition and Won 1st place.</p>
+                </div>
+                <!-- Certificate 22 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/karpagam PP .jpg" alt="Certificate 22">
+                    <p>Presented a paper at Karpagam College on "Edge Computing".</p>
+                </div>
+                <!-- Certificate 23 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/POC.jpg" alt="Certificate 23">
+                    <p>Successfullt development a project for Proof of Concept on "Smart Dust Cart".</p>
+                </div>
+                <!-- Certificate 24 -->
+                <div class="certificate-card" data-aos="fade-up" data-category="academic">
+                    <img src="./cirtificates/Ruby year project.jpg" alt="Certificate 24">
+                    <p>Successfully developed a project for Ruby year project on "E-Waste Management".</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add "View More" button -->
+        <div class="view-more-container" data-aos="fade-up">
+            <button class="btn btn-secondary view-more-btn">View More</button>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            
+            <!-- Project category filters -->
+            <div class="project-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up" data-category="ai">
+                    <div class="project-image">
+                        <img src="./projects/face and object.jpeg" alt="Face and Object Detection">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project1">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">YOLO</span>
+                        </div>
+                        <h3>Face and Object Detection</h3>
+                        <p>Developed using YOLOv8 and Python, this project detects faces and objects in real time.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-category="web">
+                    <div class="project-image">
+                        <img src="./projects/quiz.png" alt="Online Quiz application">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project2">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Web</span>
+                        </div>
+                        <h3>Online Quiz Application</h3>
+                        <p>Online Quiz application using Python.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-category="web">
+                    <div class="project-image">
+                        <img src="./projects/portfolio.png" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project3">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <h3>Portfolio Website</h3>
+                        <p>This responsive portfolio showcases my skills, certifications, and projects.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up" data-category="web">
+                    <div class="project-image">
+                        <img src="./projects/disaster management.jpg" alt="Post Disaster management">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project4">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">SIH</span>
+                            <span class="project-tag">Web</span>
+                        </div>
+                        <h3>Post Disaster Management</h3>
+                        <p>Developed a post disaster management system for Smart Indian Hackathon 2024.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-aos="fade-up" data-category="iot">
+                    <div class="project-image">
+                        <img src="./projects/dust cart.jpg" alt="Smart Dust Cart">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project5">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Hardware</span>
+                        </div>
+                        <h3>Smart Dust Cart</h3>
+                        <p>Developed an IoT based Smart Dust cart for the department level Ideathon and won 1st place.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-aos="fade-up" data-category="web">
+                    <div class="project-image">
+                        <img src="./projects/ZestyRoots.png" alt="ZestyRoots">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project6">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Web</span>
+                            <span class="project-tag">E-Commerce</span>
+                        </div>
+                        <h3>ZestyRoots</h3>
+                        <p>Developed a Web application that connects the farmers with the customers for the direct sale of fresh cultivated spices.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="project-card" data-aos="fade-up" data-category="iot">
+                    <div class="project-image">
+                        <img src="./projects/E-Waste management.jpg" alt="E-Waste Management">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project7">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Environment</span>
+                        </div>
+                        <h3>E-Waste Management</h3>
+                        <p>Developed a comprehensive system for proper disposal and recycling of electronic waste.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modals -->
+    <div class="modal-container" id="projectModal">
+        <div class="project-modal">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kesavanand20@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9043800820</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Komarapalayam, Tamil Nadu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://github.com/KesavanandJS" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kesavanand-js?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kesav_anand?igsh=MW41b21hNWwxaXIxOQ==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                    <div id="form-result" class="form-result"></div>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Kesavanand</h3>
+                    <p>Creating beautiful digital experiences with modern web technologies.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/KesavanandJS" class="footer-social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kesavanand-js?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="footer-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kesav_anand?igsh=MW41b21hNWwxaXIxOQ==" class="footer-social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Me</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#certifications">Certifications</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Python Programming</a></li>
+                            <li><a href="#">AI Applications</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Resume</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to my newsletter for the latest updates on projects and tech articles.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button class="newsletter-btn" aria-label="Subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2024 Kesavanand. All rights reserved.
+                </div>
+                
+                <div class="footer-badge">
+                    <span>Made with</span>
+                    <i class="fas fa-heart"></i>
+                    <span>by Kesavanand</span>
+                </div>
+                
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat -->
+    <div class="floating-chat">
+        <button class="chat-btn" aria-label="Chat">
+            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="chat-popup">
+            <div class="chat-header">
+                <h4>Let's Chat</h4>
+                <small>I typically respond within an hour</small>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message received">
+                    <span>Hi there! 👋 I'm Kesavanand's virtual assistant. How can I help you today?</span>
+                    <small class="chat-time">12:03</small>
+                </div>
+                
+                <!-- Quick action buttons -->
+                <div class="chat-quick-actions">
+                    <button class="quick-action-btn">Projects</button>
+                    <button class="quick-action-btn">Contact</button>
+                    <button class="quick-action-btn">Resume</button>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="chat-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top">
+        <span class="top-arrow"><i class="fas fa-arrow-up"></i></span>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- Add the animations script -->
+    <script src="./js/animations.js"></script>
+</body>
+</html>
+    <script src="./js/animations.js"></script>
+</body>
+</html>
+                    <button class="chat-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- Add the animations script -->
+    <script src="./js/animations.js"></script>
+</body>
+</html>
