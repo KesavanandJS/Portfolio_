@@ -115,6 +115,20 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
 });
 
+// Parallax effect for decorative elements
+document.addEventListener('DOMContentLoaded', function() {
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    function parallaxScrollHandler() {
+        const scrollY = window.scrollY;
+        parallaxEls.forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
+            el.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+    }
+    window.addEventListener('scroll', parallaxScrollHandler, { passive: true });
+    parallaxScrollHandler();
+});
+
 // Skill progress bars animation
 document.addEventListener('DOMContentLoaded', function() {
     const skillBars = document.querySelectorAll('.skill-progress-bar');
