@@ -101,6 +101,52 @@ input:checked + .toggle-label .toggle-ball {
     transform: translateX(25px);
 }
 
+@media (max-width: 768px) {
+    .theme-switch {
+        top: 20px;
+        right: 70px; /* Move left to avoid menu toggle */
+    }
+    
+    .toggle-label {
+        width: 45px;
+        height: 22px;
+        padding: 4px;
+    }
+    
+    .toggle-ball {
+        width: 18px;
+        height: 18px;
+        top: 2px;
+    }
+    
+    input:checked + .toggle-label .toggle-ball {
+        transform: translateX(22px);
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-switch {
+        top: 5px;
+        right: 65px; /* Adjust for smaller screens */
+    }
+    
+    .toggle-label {
+        width: 40px;
+        height: 20px;
+        padding: 3px;
+    }
+    
+    .toggle-ball {
+        width: 16px;
+        height: 16px;
+        top: 2px;
+    }
+    
+    input:checked + .toggle-label .toggle-ball {
+        transform: translateX(18px);
+    }
+}
+
 /* General Styles */
 a {
     text-decoration: none;
