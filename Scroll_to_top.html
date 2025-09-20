@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      width: 60px;
+      height: 60px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      z-index: 1000;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.2);
+      border-radius: 50%;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #liquidSvg {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- Add enough content to enable scrolling -->
+    <div style="height: 2000px;"></div>
+  </div>
+  <button id="scrollToTopBtn" class="scroll-to-top">
+    <svg id="liquidSvg" width="60" height="60" viewBox="0 0 60 60">
+      <defs>
+        <linearGradient id="liquidGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0C838" />
+          <stop offset="20%" stop-color="#F1573D" />
+          <stop offset="40%" stop-color="#C24C9C" />
+          <stop offset="60%" stop-color="#04B2C1" />
+          <stop offset="100%" stop-color="#08B36D" />
+        </linearGradient>
+        <clipPath id="liquidClip">
+          <circle cx="30" cy="30" r="28" />
+        </clipPath>
+      </defs>
+      <circle cx="30" cy="30" r="28" stroke="#2196f3" stroke-width="4" fill="#e3f2fd"/>
+      <g clip-path="url(#liquidClip)">
+        <path id="liquidPath" fill="url(#liquidGradient)" opacity="0.7"/>
+        <!-- Glassy highlight -->
+        <ellipse id="liquidHighlight" cx="30" cy="22" rx="16" ry="6" fill="white" opacity="0.25"/>
+      </g>
+      <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="18" font-family="Arial" dy=".3em">↑</text>
+    </svg>
+  </button>
+  <script>
+    function getScrollPercent() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      return docHeight === 0 ? 0 : Math.min(scrollTop / docHeight, 1);
+    }
+
+    let currentFill = 0;
+    let targetFill = 0;
+    let wavePhase = 0;
+    const waveSpeed = 0.08; // radians per frame
+
+    function animateLiquid() {
+      // Smoothly animate fill
+      currentFill += (targetFill - currentFill) * 0.08;
+      wavePhase += waveSpeed;
+      updateLiquidFill(currentFill, wavePhase);
+      requestAnimationFrame(animateLiquid);
+    }
+
+    function updateLiquidFill(percent, phase) {
+      const radius = 28;
+      const centerY = 30;
+      const maxFill = 2 * radius;
+      const fillHeight = maxFill * percent;
+      const y = centerY + radius - fillHeight;
+
+      // Animated wave path
+      const waveWidth = 56;
+      const waveHeight = 2 + 1 * Math.sin(phase/2); // Reduced wave height
+      const waveCount = 2.5;
+      let path = `M2,${y}`;
+      for (let i = 0; i <= waveCount * 20; i++) {
+        const x = 2 + (i * waveWidth) / (waveCount * 20);
+        const angle = phase + (i / (waveCount * 20)) * waveCount * Math.PI * 2;
+        const waveY = y + Math.sin(angle) * waveHeight;
+        path += ` L${x},${waveY}`;
+      }
+      path += ` L58,58 L2,58 Z`;
+
+      document.getElementById('liquidPath').setAttribute('d', path);
+
+      // Move the highlight to follow the liquid surface
+      const highlightY = Math.max(y - 8, 12);
+      const highlight = document.getElementById('liquidHighlight');
+      if (highlight) {
+        highlight.setAttribute('cy', highlightY);
+        highlight.setAttribute('opacity', percent > 0.05 ? 0.25 : 0);
+      }
+    }
+
+    function handleScroll() {
+      targetFill = getScrollPercent();
+      const btn = document.getElementById('scrollToTopBtn');
+      if (targetFill > 0.05) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+
+    document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      targetFill = getScrollPercent();
+      animateLiquid();
+    });
+  </script>
+</body>
+</html>

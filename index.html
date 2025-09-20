@@ -525,6 +525,50 @@
                         <p>Developed a comprehensive system for proper disposal and recycling of electronic waste.</p>
                     </div>
                 </div>
+                
+                <!-- Project 8 -->
+                <div class="project-card" data-aos="fade-up" data-category="iot">
+                    <div class="project-image">
+                        <img src="./projects/Placement predictor.png" alt="AI-powered placement predictor">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project8">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Web</span>
+                            <span class="project-tag">Placements</span>
+                        </div>
+                        <h3>AI-Powered Placement Predictor</h3>
+                        <p>Developed a AI-Powered placement Predictor system for College students to predict their placement chances based on various parameters and their performance in assessments.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="project-card" data-aos="fade-up" data-category="iot">
+                    <div class="project-image">
+                        <img src="./projects/career advisor.png" alt="AI-powered Career Advisor">
+                        <div class="project-overlay">
+                            <div class="project-preview">
+                                <button class="btn-view-project" data-project="project9">View Details</button>
+                                <a href="#" class="btn-visit-site"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Web</span>
+                            <span class="project-tag">Careerspan>
+                        </div>
+                        <h3>AI-Powered Career Advisor</h3>
+                        <p>Developed a AI-Powered Career Advisor for Smart Indian Hackathon 2025 that helps the students to make informed career choices based on their skills and interests.</p>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     </section>
@@ -685,49 +729,36 @@
         </div>
     </footer>
 
-    <!-- Floating Chat -->
-    <div class="floating-chat">
-        <button class="chat-btn" aria-label="Chat">
-            <i class="fas fa-comment-dots"></i>
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="chat-popup">
-            <div class="chat-header">
-                <h4>Let's Chat</h4>
-                <small>I typically respond within an hour</small>
-            </div>
-            <div class="chat-body">
-                <div class="chat-message received">
-                    <span>Hi there! 👋 I'm Kesavanand's virtual assistant. How can I help you today?</span>
-                    <small class="chat-time">12:03</small>
-                </div>
-                
-                <!-- Quick action buttons -->
-                <div class="chat-quick-actions">
-                    <button class="quick-action-btn">Projects</button>
-                    <button class="quick-action-btn">Contact</button>
-                    <button class="quick-action-btn">Resume</button>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <div class="chat-input">
-                    <input type="text" placeholder="Type a message...">
-                    <button class="chat-send-btn">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Back to top button -->
-    <button id="back-to-top">
-        <span class="top-arrow"><i class="fas fa-arrow-up"></i></span>
+    <!-- Back to top button with liquid fill effect -->
+    <button id="back-to-top" class="scroll-to-top">
+        <svg id="liquidSvg" width="60" height="60" viewBox="0 0 60 60">
+            <defs>
+                <linearGradient id="liquidGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#4a6bff" />
+                    <stop offset="25%" stop-color="#3a59e0" />
+                    <stop offset="50%" stop-color="#6d8dff" />
+                    <stop offset="75%" stop-color="#5d7df5" />
+                    <stop offset="100%" stop-color="#4a6bff" />
+                </linearGradient>
+                <clipPath id="liquidClip">
+                    <circle cx="30" cy="30" r="28" />
+                </clipPath>
+            </defs>
+            <circle cx="30" cy="30" r="28" stroke="#4a6bff" stroke-width="3" fill="#f8f9fa"/>
+            <g clip-path="url(#liquidClip)">
+                <path id="liquidPath" fill="url(#liquidGradient)" opacity="0.8"/>
+                <!-- Glassy highlight -->
+                <ellipse id="liquidHighlight" cx="30" cy="22" rx="16" ry="6" fill="white" opacity="0.3"/>
+            </g>
+            <text x="30" y="36" text-anchor="middle" fill="#fff" font-size="20" font-family="Poppins" font-weight="600" dy=".1em">↑</text>
+        </svg>
     </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/script.js"></script>
     <!-- Add the animations script -->
     <script src="./js/animations.js"></script>
+    <!-- Add the scroll to top script -->
+    <script src="./js/scroll-to-top.js"></script>
 </body>
 </html>

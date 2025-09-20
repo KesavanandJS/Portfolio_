@@ -2420,3 +2420,104 @@ button,
         font-size: 1rem;
     }
 }
+
+/* Liquid Fill Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1000;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.8);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(var(--primary-color-rgb), 0.25);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+#liquidSvg {
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(var(--primary-color-rgb), 0.2));
+    transition: filter 0.3s ease;
+}
+
+.scroll-to-top:hover #liquidSvg {
+    filter: drop-shadow(0 6px 12px rgba(var(--primary-color-rgb), 0.3));
+}
+
+/* Dark theme adjustments for scroll button */
+.dark-theme .scroll-to-top svg circle:first-of-type {
+    fill: #1e1e1e;
+    stroke: #6d8dff;
+}
+
+.dark-theme #liquidGradient stop:nth-child(1) {
+    stop-color: #6d8dff;
+}
+
+.dark-theme #liquidGradient stop:nth-child(2) {
+    stop-color: #5d7df5;
+}
+
+.dark-theme #liquidGradient stop:nth-child(3) {
+    stop-color: #8da5ff;
+}
+
+.dark-theme #liquidGradient stop:nth-child(4) {
+    stop-color: #7d9df5;
+}
+
+.dark-theme #liquidGradient stop:nth-child(5) {
+    stop-color: #6d8dff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    #liquidSvg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #liquidSvg {
+        width: 50px;
+        height: 50px;
+    }
+}
