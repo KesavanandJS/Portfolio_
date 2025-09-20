@@ -2407,18 +2407,21 @@ button,
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     border-radius: 50%;
     display: flex;
-    align-items: center ;
+    align-items: center;
     justify-content: center;
-    margin: 10px auto 20px;
+    margin: 0 auto 20px auto;
     color: white;
     font-size: 2rem;
     box-shadow: 0 10px 30px rgba(var(--primary-color-rgb), 0.3);
     animation: bounce 2s infinite;
+    text-align: center;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.badge-icon i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .badge-content h3 {
